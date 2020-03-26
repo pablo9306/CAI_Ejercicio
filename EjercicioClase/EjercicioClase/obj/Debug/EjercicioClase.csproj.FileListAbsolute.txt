@@ -1,0 +1,6 @@
+C:\Users\Pablo\Documents\GitHub\CAI_Ejercicio\EjercicioClase\EjercicioClase\bin\Debug\EjercicioClase.exe.config
+C:\Users\Pablo\Documents\GitHub\CAI_Ejercicio\EjercicioClase\EjercicioClase\bin\Debug\EjercicioClase.exe
+C:\Users\Pablo\Documents\GitHub\CAI_Ejercicio\EjercicioClase\EjercicioClase\bin\Debug\EjercicioClase.pdb
+C:\Users\Pablo\Documents\GitHub\CAI_Ejercicio\EjercicioClase\EjercicioClase\obj\Debug\EjercicioClase.csprojAssemblyReference.cache
+C:\Users\Pablo\Documents\GitHub\CAI_Ejercicio\EjercicioClase\EjercicioClase\obj\Debug\EjercicioClase.exe
+C:\Users\Pablo\Documents\GitHub\CAI_Ejercicio\EjercicioClase\EjercicioClase\obj\Debug\EjercicioClase.pdb
