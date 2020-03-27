@@ -36,27 +36,30 @@ namespace EjercicioClase
             }
         }
 
-        public Restaurant(int cantMesas, bool estaAbierto)
+        public Restaurant(int cantMesas, string direccion)
         {
             this._cantMesas = cantMesas;
-            this._estaAbierto = estaAbierto;
+            this._estaAbierto = true;
+            this._direccion = direccion;
         }
 
-        public bool CupoMesas(int mesasreservar)
-        {
+        
+        public int CupoMesas(int mesasreservar)
+        {            
             if (this._estaAbierto)
             {
                 if (this._cantMesas < mesasreservar)
                 {
-                    Console.WriteLine("Mesas a reservar excedido, sólo tenemos " + (this._cantMesas - mesasreservar) + " disponbiles");
-                    return false;
+                   throw new Exception("Mesas a reservar excedido, sólo tenemos " + (this._cantMesas - mesasreservar) + " disponbiles");
                 }
-                Console.WriteLine("Se reservaron " + mesasreservar + " mesas. Quedan " + (this._cantMesas - mesasreservar) + " disponibles");
-                this._cantMesas = (this._cantMesas - mesasreservar);
-                return true;
+                //Console.WriteLine("Se reservaron " + mesasreservar + " mesas. Quedan " + (this._cantMesas - mesasreservar) + " disponibles");
+                return (this._cantMesas - mesasreservar);
             }
-            Console.WriteLine("Restaurant cerrado");
-            return false;
+            throw new Exception("Restaurant cerrado");
         }
-     }
+        public void estaAbierto()
+        {
+            this._estaAbierto = true;
+        }
+    }
 }
