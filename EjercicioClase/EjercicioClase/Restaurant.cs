@@ -46,12 +46,12 @@ namespace EjercicioClase
         {
             if (this._estaAbierto)
             {
-                if (this._cantMesas <= mesasreservar)
+                if (this._cantMesas < mesasreservar)
                 {
-                    Console.WriteLine("Mesas a reservar excedido");
+                    Console.WriteLine("Mesas a reservar excedido, sólo tenemos " + (this._cantMesas - mesasreservar) + " disponbiles");
                     return false;
                 }
-                Console.WriteLine("Se reservaron " + mesasreservar + " mesas");
+                Console.WriteLine("Se reservaron " + mesasreservar + " mesas. Quedan " + (this._cantMesas - mesasreservar) + " disponibles");
                 this._cantMesas = (this._cantMesas - mesasreservar);
                 return true;
             }

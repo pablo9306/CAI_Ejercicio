@@ -11,6 +11,7 @@ namespace EjercicioClase
         static void Main(string[] args)
         {
             Restaurant Pablin = new Restaurant(5, true);
+            Console.WriteLine("Bienvenido al Restaurant Pablin");
             Console.WriteLine("Ingresar la cantidad de mesas a pedir:");
             int mesaspedidas = int.Parse(Console.ReadLine());
             Pablin.CupoMesas(mesaspedidas);
