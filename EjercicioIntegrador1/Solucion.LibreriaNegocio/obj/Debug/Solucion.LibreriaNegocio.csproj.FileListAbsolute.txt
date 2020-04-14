@@ -1,0 +1,5 @@
+C:\Users\p041218\source\Facu\Solucion.Consola\Solucion.LibreriaNegocio\bin\Debug\Solucion.LibreriaNegocio.dll
+C:\Users\p041218\source\Facu\Solucion.Consola\Solucion.LibreriaNegocio\bin\Debug\Solucion.LibreriaNegocio.pdb
+C:\Users\p041218\source\Facu\Solucion.Consola\Solucion.LibreriaNegocio\obj\Debug\Solucion.LibreriaNegocio.csprojAssemblyReference.cache
+C:\Users\p041218\source\Facu\Solucion.Consola\Solucion.LibreriaNegocio\obj\Debug\Solucion.LibreriaNegocio.dll
+C:\Users\p041218\source\Facu\Solucion.Consola\Solucion.LibreriaNegocio\obj\Debug\Solucion.LibreriaNegocio.pdb
