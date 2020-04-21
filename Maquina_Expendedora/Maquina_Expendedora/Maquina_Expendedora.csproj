@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodigoInvalidoException.cs" />
     <Compile Include="ConsolaHelp.cs" />
     <Compile Include="Lata.cs" />
     <Compile Include="Expendedora.cs" />

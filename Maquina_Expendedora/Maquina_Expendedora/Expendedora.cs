@@ -20,14 +20,47 @@ namespace Maquina_Expendedora
         public double Dinero { get => _dinero; set => _dinero = value; }
         public bool Encendida { get => _encendida; set => _encendida = value; }
 
+        public Expendedora()
+        {
+            this._lata = new List<Lata>();
+        }
+
+        
         public void AgregarLata(Lata lata)
         {
-            Console.WriteLine("Escribir el código: ");
-            string Codigo = Console.ReadLine();
-            Lata latas = new Lata(Codigo);
-            Lata.Add(latas);
+            this._lata.Add(lata);
+        }
+
+        public void AgregarLataNueva(string codigo, double precio, double volumen)
+        {
+            Lata latrucho = this.createLata(codigo);
+            latrucho.Precio = precio;
+            latrucho.Volumen = volumen;
+            this.AgregarLata(latrucho);
 
         }
 
-    }
+        public Lata createLata(string codigo) 
+        {
+            Lata latita = null;
+            if (codigo == "CO1")
+                return  new Maquina_Expendedora.Lata("CO1", "Coca Cola", "Regular", 10, 1);
+            if (codigo == "CO2")
+                return new Maquina_Expendedora.Lata("CO2", "Coca Cola", "Zero", 11, 1);
+
+            if (codigo == "SP1")
+                return new Maquina_Expendedora.Lata("SP1", "Sprite", "Regular", 10, 1);
+            if (codigo == "SP2")
+                return new Maquina_Expendedora.Lata("SP2", "Sprite", "Zero", 11, 1);
+
+            if (codigo == "FA1")
+                return new Maquina_Expendedora.Lata("FA1", "Fanta", "Regular", 10, 1);
+            if (codigo == "FA2")
+                return new Maquina_Expendedora.Lata("FA2", "Fanta", "Zero", 11, 1);
+
+            throw new CodigoInvalidoException("Codigo Invalid");
+        }
+
+
+}
 }

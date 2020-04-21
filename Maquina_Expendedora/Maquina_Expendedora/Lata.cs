@@ -17,9 +17,13 @@ namespace Maquina_Expendedora
         public double Precio { get => _precio; set => _precio = value; }
         public double Volumen { get => _volumen; set => _volumen = value; }
 
-        public Lata(string Codigo)
+        public Lata(string Codigo, string Nombre, string Sabor, double Precio, double Volumen)
         {
             this._codigo = Codigo;
+            this._precio = Precio;
+            this._volumen = Volumen;
+            this._sabor = Sabor;
+            this._nombre = Nombre;
         }
         public double GetPrecioPorLitro()
         {
@@ -30,5 +34,6 @@ namespace Maquina_Expendedora
         {
             throw new NotImplementedException();
         }
+
     }
 }
