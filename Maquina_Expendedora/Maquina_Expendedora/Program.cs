@@ -25,8 +25,8 @@ namespace Maquina_Expendedora
             //MostrarStock(maquina);
 
             Console.WriteLine("Máquina expendedora, seleccione una opción");
-            string menu = "1) Listado de latas aceptadas \n2) Ingresar lata \n3) Seleccionar lata por código " +
-               "\n4) Balance de la máquina \n5) Balance extra \n6) Apagar máquina";
+            string menu = "1) Listado de latas aceptadas \n2) Ingresar lata \n3) Balance de la máquina " +
+                 "\n4) Balance extra \n5) Apagar máquina";
             do
             {
                 Console.WriteLine(menu);
@@ -58,8 +58,11 @@ namespace Maquina_Expendedora
                                 
                                 break;
                             case "5":
+                                Console.WriteLine("Hasta pronto!");
+                                Console.ReadLine();
+                                return;
                                 break;
-                            //etc... si tenemos más opciones...
+                                //etc... si tenemos más opciones...
                             default:
                                 Console.WriteLine("Opción inválida.");
                                 break;
@@ -102,6 +105,11 @@ namespace Maquina_Expendedora
         {
             Console.WriteLine("Escribir el código: ");
             string c = Console.ReadLine();
+            if (!expendedora.TieneCapacidad(c))
+            {
+                Console.WriteLine("No hay capacidad para esa lata.");
+                return;
+            }
             Console.WriteLine("Escribir el precio: ");
             double p = int.Parse(Console.ReadLine());
             Console.WriteLine("Escribir el volumen: ");

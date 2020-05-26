@@ -31,8 +31,14 @@ namespace Maquina_Expendedora
             this._lata.Add(lata);
         }
 
+        public bool TieneCapacidad(string codigo)
+        {
+            return this.Lata.Where(lata=>lata.Codigo==codigo).ToList().Count < 10;
+        }
+
         public void AgregarLataNueva(string codigo, double precio, double volumen)
         {
+            
             Lata latrucho = this.createLata(codigo);
             latrucho.Precio = precio;
             latrucho.Volumen = volumen;
@@ -42,17 +48,15 @@ namespace Maquina_Expendedora
 
         public Lata createLata(string codigo) 
         {
-            Lata latita = null;
+            //Lata latita = null;
             if (codigo == "CO1")
                 return  new Maquina_Expendedora.Lata("CO1", "Coca Cola", "Regular", 10, 1);
             if (codigo == "CO2")
                 return new Maquina_Expendedora.Lata("CO2", "Coca Cola", "Zero", 11, 1);
-
             if (codigo == "SP1")
                 return new Maquina_Expendedora.Lata("SP1", "Sprite", "Regular", 10, 1);
             if (codigo == "SP2")
                 return new Maquina_Expendedora.Lata("SP2", "Sprite", "Zero", 11, 1);
-
             if (codigo == "FA1")
                 return new Maquina_Expendedora.Lata("FA1", "Fanta", "Regular", 10, 1);
             if (codigo == "FA2")
