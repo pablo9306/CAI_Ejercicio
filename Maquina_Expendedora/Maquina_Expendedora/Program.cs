@@ -22,11 +22,9 @@ namespace Maquina_Expendedora
             Console.Clear();
 
             Expendedora maquina = IniciarListaLatas();
-            //MostrarStock(maquina);
-
             Console.WriteLine("Máquina expendedora, seleccione una opción");
-            string menu = "1) Listado de latas aceptadas \n2) Ingresar lata \n3) Balance de la máquina " +
-                 "\n4) Balance extra \n5) Apagar máquina";
+            string menu = "1) Listado de latas aceptadas \n2) Ingresar lata \n3) Comprar una lata \n4) Balance de la máquina " +
+                 "\n5) Balance extra \n6) Apagar máquina";
             do
             {
                 Console.WriteLine(menu);
@@ -52,17 +50,18 @@ namespace Maquina_Expendedora
                                 IngresarLata(maquina);
                                 break;
                             case "3":
-                                mostratTotaaaaaaaaaal(maquina);
+                                comprarLata(maquina);
                                 break;
                             case "4":
-                                
+                                mostrarBalance(maquina);
                                 break;
                             case "5":
+                                mostrarBalanceDetallado(maquina);
+                                break;
+                            case "6":
                                 Console.WriteLine("Hasta pronto!");
                                 Console.ReadLine();
                                 return;
-                                break;
-                                //etc... si tenemos más opciones...
                             default:
                                 Console.WriteLine("Opción inválida.");
                                 break;
@@ -135,7 +134,7 @@ namespace Maquina_Expendedora
         }
 
 
-        private static void mostratTotaaaaaaaaaal(Expendedora expendedora)
+        private static void mostrarBalance(Expendedora expendedora)
         {
 
             var trucho = expendedora.Lata.Select(x => x.Codigo).Distinct();
@@ -155,6 +154,12 @@ namespace Maquina_Expendedora
                    Console.WriteLine("Cantidad " + cantidadIguales + " " + l.Codigo + " " + l.Nombre + " " + l.Sabor);
 
             }
+        }
+        private static void mostrarBalanceDetallado(Expendedora expendedora)
+        {
+        }
+        private static void comprarLata(Expendedora expendedora)
+        {
         }
     }
 }
