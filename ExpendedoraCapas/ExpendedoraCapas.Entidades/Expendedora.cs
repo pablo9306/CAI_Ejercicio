@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpendedoraCapas.Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,19 +37,23 @@ namespace ExpendedoraCapas.Entidades
             return this.Lata.Where(lata => lata.Codigo == codigo).ToList().Count < 10;
         }
 
+        public double CompararPrecio(string c)
+        {
+           return this.Lata.Where(lata => lata.Codigo == c).First().Precio;
+        }
+        
         public void AgregarLataNueva(string codigo, double precio, double volumen)
         {
 
-            Lata latrucho = this.createLata(codigo);
-            latrucho.Precio = precio;
-            latrucho.Volumen = volumen;
-            this.AgregarLata(latrucho);
+            Lata lataCreada = this.createLata(codigo);
+            lataCreada.Precio = precio;
+            lataCreada.Volumen = volumen;
+            this.AgregarLata(lataCreada);
 
         }
 
         public Lata createLata(string codigo)
         {
-            //Lata latita = null;
             if (codigo == "CO1")
                 return new Entidades.Lata("CO1", "Coca Cola", "Regular", 10, 1);
             if (codigo == "CO2")
@@ -62,7 +67,7 @@ namespace ExpendedoraCapas.Entidades
             if (codigo == "FA2")
                 return new Entidades.Lata("FA2", "Fanta", "Zero", 11, 1);
 
-            throw new CodigoInvalidoException("Codigo Invalid");
+           throw new CodigoInvalidoException("Codigo Invalid");
         }
 
 

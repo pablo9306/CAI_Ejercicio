@@ -12,12 +12,13 @@ namespace ExpendedoraCapas.Negocio
     
         public static void MostrarLatas(Expendedora expendedora)
         {
-            var trucho = expendedora.Lata.Select(x => x.Codigo).Distinct();
+            Console.Clear();
+            var lataCreada = expendedora.Lata.Select(x => x.Codigo).Distinct();
 
-            foreach (var item in trucho)
+            foreach (var item in lataCreada)
             {
                 Lata l = expendedora.Lata.Find(x => x.Codigo == item);
-
+                
                 Console.WriteLine(l.Codigo + " " + l.Nombre + " " + l.Sabor);
             }
 

@@ -1,0 +1,44 @@
+ Estimados, les paso un link al UML y las consignas: https://drive.google.com/file/d/1Kzg7iv8S_Du-q7wYPiT1nasPJYTrq4I0/view?usp=sharing
+Problema:
+Tengo una maquina expendedora y necesito modelar el agregado y extraccion de latas de bebidas.
+(Cada caso de uso es un menú en la consola)
+- caso de uso 0: el usuario enciende la maquina
+- resultado: maquina encendida.
+- caso de uso 1: el usuario pide el listado de latas disponibles.
+- resultado: se le muestra a todos los usuario siempre el mismo listado:
++ CO1 - Coca Cola Regular
++ CO2 - Coca Cola Zero
++ SP1 - Sprite Regular
++ SP2 - Sprite Zero
++ FA1 - Fanta Regular
++ FA2 - Fanta Zero
+- caso de uso 2: actor inserta una lata de bebida variable a la maquina.
+- Se le listan los códigos váludos de las latas latas (include CU 1)
+- ingresa codigo valido (dentro de los que estamos estableciendo)
+- ingresa un precio
+- ingresa un volumen
+- (la marca y el sabor se ingresan automáticamente dependiendo del codigo que ingresó el usuario)
+- resultado: se suma la lata a la lista de la maquina.
+- precondiciones: la maquina está encendida
+- flujo alt. 1 el código es inválido
+- flujo alt. 2 la maquina está llena (capacidad insuficiente)
+- caso de uso 3: actor elije una lata de la maquina por código, ingresa el dinero tiene y la extrae.
+- Se le listan los códigos váludos de las latas latas (include CU 1)
+- La lata es seleccinada mediante un codigo que ingresa el usuario.
+- usuario ingresa dinero que tiene.
+resultado: El usuario obtiene su lata, la maquina acumula dinero y sale una lata de la lista.
+- precondiciones 1: la maquina está encendida.
+- precondiciones 2: la maquina no está vacía.
+- flujo alt. 1 el código es inválido
+- flujo alt. 2 el dinero no es suficiente
+- flujo alt. 3 no hay stock de esa lata
+- caso de uso 4: el actor desea conocer el balance
+- precondiciones 1: la maquina está encendida.
+- resultado: muestra un string con el dinero que tiene la máquina y cuantas latas tiene.
+
+- caso de uso 5: el actor desea conocer todo el stock y por cada lata su descripcion completa
+- precondiciones 1: la maquina está encendida.
+- precondiciones 2: la maquina no está vacía.
+- resultado: muestra por pantalla la lista de las latas, y por cada lata el siguiente string
+"{nombre} - {sabor} $ {precio} / $/L {precio por litro}".
+Saludos!

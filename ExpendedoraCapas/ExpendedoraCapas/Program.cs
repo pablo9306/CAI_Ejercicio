@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using ExpendedoraCapas.Entidades;
 using ExpendedoraCapas.Negocio;
 
-namespace ExpendedoraCapas
+namespace ExpendedoraCapas.Presentacion
 {
     class Program
     {
@@ -45,7 +45,7 @@ namespace ExpendedoraCapas
                         switch (opcionSeleccionada)
                         {
                             case "1":
-                                MostrarLatasAceptadas(maquina);
+                                Negocio.MostrarLatasAceptadas.MostrarLatas(maquina);
                                 break;
                             case "2":
                                 IngresarLata(maquina);
@@ -103,6 +103,7 @@ namespace ExpendedoraCapas
 
         private static void IngresarLata(Entidades.Expendedora expendedora)
         {
+            Console.Clear();
             Console.WriteLine("Escribir el código: ");
             string c = Console.ReadLine();
             if (!expendedora.TieneCapacidad(c))
@@ -123,12 +124,12 @@ namespace ExpendedoraCapas
         private static void MostrarLatasAceptadas(Entidades.Expendedora expendedora)
         {
 
-            var trucho = expendedora.Lata.Select(x => x.Codigo).Distinct();
+            var lataCreada = expendedora.Lata.Select(x => x.Codigo).Distinct();
 
-            foreach (var item in trucho)
+            foreach (var item in lataCreada)
             {
                 Lata l = expendedora.Lata.Find(x => x.Codigo == item);
-
+                Console.Clear();
                 Console.WriteLine(l.Codigo + " " + l.Nombre + " " + l.Sabor);
             }
 
@@ -137,10 +138,10 @@ namespace ExpendedoraCapas
 
         private static void mostrarBalance(Entidades.Expendedora expendedora)
         {
+            Console.Clear();
+            var lataCreada = expendedora.Lata.Select(x => x.Codigo).Distinct();
 
-            var trucho = expendedora.Lata.Select(x => x.Codigo).Distinct();
-
-            foreach (var item in trucho)
+            foreach (var item in lataCreada)
             {
                 Lata l = expendedora.Lata.Find(x => x.Codigo == item);
                 var cantidadIguales = 0;
@@ -152,6 +153,7 @@ namespace ExpendedoraCapas
 
                     }
                 }
+                
                 Console.WriteLine("Cantidad " + cantidadIguales + " " + l.Codigo + " " + l.Nombre + " " + l.Sabor);
 
             }
@@ -161,6 +163,14 @@ namespace ExpendedoraCapas
         }
         private static void comprarLata(Entidades.Expendedora expendedora)
         {
+            Console.Clear();
+            mostrarBalance(expendedora);
+            Console.WriteLine("\nIngrese código de lata:");
+            string c = Console.ReadLine();
+            Console.WriteLine("Ingrese dinero:");
+            int d = int.Parse(Console.ReadLine());
+            expendedora.CompararPrecio(c);
+            
         }
     }
 }
